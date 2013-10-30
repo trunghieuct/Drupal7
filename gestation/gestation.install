@@ -1,0 +1,34 @@
+<?php
+
+/**
+ *  2009 Erick Romero (erm) <erick@adalid-soft.com>
+ *  gestation Calculator
+*/
+
+
+/**
+ * Implementation of hook_install().
+ */
+function gestation_install() {
+  // Create tables.
+  //drupal_install_schema('gestation');
+  variable_set('gestation_counter', 0);
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function gestation_uninstall() {
+  // Remove tables.
+  // drupal_uninstall_schema('gestation');
+  variable_del('gestation_counter');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+/*
+function gestation_schema() {
+
+}
+*/

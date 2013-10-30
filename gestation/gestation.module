@@ -1,0 +1,97 @@
+<?php
+
+/**
+ *  2009 Erick Romero (erm) <erick@adalid-soft.com>
+ *  Gestation
+*/
+
+/**
+ * Implementation of hook_help().
+ */
+function gestation_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#gestation':
+      $output  = '<p>'. t('<a href="@gestation">Module page</a>.', array('@gestation' => url('gestation'))) .'</p>';
+      $output .= '<p>'. t('Gestation Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') .'<br>';
+      $output .= t('Contact: erick (at) adalid-soft (dot) com') .'</p>';
+      return $output;
+  }
+  return '';
+}
+
+/**
+ * Implementation of hook_perm
+ */
+function gestation_perm() {
+  return array('access gestation', 'administer gestation');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function gestation_menu() {
+
+//erm. admin menu
+  $items['admin/gestation'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.admin.inc',
+    'page callback' => 'gestation_admin_page',
+    'access arguments' => array('administer gestation'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/gestation/export'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.admin.inc',
+    'page callback' => 'gestation_export',
+    'access arguments' => array('administer gestation'),
+    'type' => MENU_CALLBACK,
+  );
+
+//erm. user menu
+  $items['gestation'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.pages.inc',
+    'page callback' => 'gestation_main',
+    'access arguments' => array('access gestation'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['gestation/lmp'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.pages.inc',
+    'page callback' => 'gestation_lmp',
+    'access arguments' => array('access gestation'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['gestation/edc'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.pages.inc',
+    'page callback' => 'gestation_edc',
+    'access arguments' => array('access gestation'),
+    'type' => MENU_CALLBACK,
+  );
+
+
+
+  $items['gestation/result/%'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.pages.inc',
+    'page callback' => 'gestation_result',
+    'page arguments' => array(2),
+    'access arguments' => array('access gestation'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['gestation/print/%'] = array(
+    'title' => 'Gestation',
+    'file' => 'gestation.pages.inc',
+    'page callback' => 'gestation_print',
+    'page arguments' => array(2),
+    'access arguments' => array('access gestation'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}

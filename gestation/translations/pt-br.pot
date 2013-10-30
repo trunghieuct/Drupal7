@@ -1,0 +1,203 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  gestation.admin.inc: n/a
+#  gestation.pages.inc: n/a
+#  gestation.module: n/a
+#  gestation.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2009-11-06 15:44-0600\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: gestation.admin.inc:20;23
+msgid "emails arquivados"
+msgstr ""
+
+#: gestation.admin.inc:26
+msgid "calculos de gestação realizados"
+msgstr ""
+
+#: gestation.admin.inc:28
+msgid "<a href=\"@link\">Download emails</a>"
+msgstr ""
+
+#: gestation.pages.inc:24;74;216
+msgid "Propósito: Estimar a duração da gravidez baseado em 266 dias a partir da concepção (ou 280 dias do primeiro dia da ultima menstruação)."
+msgstr ""
+
+#: gestation.pages.inc:28;78;220;376
+msgid "Calculadora de Gestação"
+msgstr ""
+
+#: gestation.pages.inc:34;84;226
+msgid "Data conhecida"
+msgstr ""
+
+#: gestation.pages.inc:38;91;424;459
+msgid "Primeiro dia da última menstruação (DUM)"
+msgstr ""
+
+#: gestation.pages.inc:39;233;430;453
+msgid "Data estimada do nascimento"
+msgstr ""
+
+#: gestation.pages.inc:47
+msgid "Continuar"
+msgstr ""
+
+#: gestation.pages.inc:97;239;425;434;454;463
+msgid "Data da avaliação (hoje)"
+msgstr ""
+
+#: gestation.pages.inc:103;245
+msgid "Are you evaluating a pregnant woman's gestational dates?"
+msgstr ""
+
+#: gestation.pages.inc:106;248
+msgid "Sim"
+msgstr ""
+
+#: gestation.pages.inc:107;249
+msgid "Não"
+msgstr ""
+
+#: gestation.pages.inc:113;255
+msgid "E-mail"
+msgstr ""
+
+#: gestation.pages.inc:115;257
+msgid "Coloque aqui seu e-mail e receba o resultado em sua caixa de mensagens."
+msgstr ""
+
+#: gestation.pages.inc:122;264
+msgid "Calcular"
+msgstr ""
+
+#: gestation.pages.inc:132;274
+msgid "Applies to evaluating the significant dates of a woman's pregnancy"
+msgstr ""
+
+#: gestation.pages.inc:146
+msgid "A data da avaliação não pode ser antes da DUM (primeiro dia da última menstruação)"
+msgstr ""
+
+#: gestation.pages.inc:150
+msgid "A data da avaliação está muito longe da DUM (primeiro dia da última menstruação)"
+msgstr ""
+
+#: gestation.pages.inc:154;327
+msgid "Coloque um e-email válido"
+msgstr ""
+
+#: gestation.pages.inc:288
+msgid "Data estimada do nascimento e a data de avaliação podem estar incorretas"
+msgstr ""
+
+#: gestation.pages.inc:377
+msgid "Calculadora Gestacional - Seus Resultados"
+msgstr ""
+
+#: gestation.pages.inc:384
+msgid "Os resultados foram enviados por e-mail"
+msgstr ""
+
+#: gestation.pages.inc:391
+msgid "<a target=\"_blank\" href=\"@link\">versão para impressão</a>"
+msgstr ""
+
+#: gestation.pages.inc:398;564
+msgid "Parametros inválidos"
+msgstr ""
+
+#: gestation.pages.inc:412
+msgid "Unkown selected type"
+msgstr ""
+
+#: gestation.pages.inc:423;452
+msgid "Datas selecionadas"
+msgstr ""
+
+#: gestation.pages.inc:428;457
+msgid "Resultados"
+msgstr ""
+
+#: gestation.pages.inc:430
+msgid "+/- 2 semanas"
+msgstr ""
+
+#: gestation.pages.inc:431;460
+msgid "Data estimada da concepção"
+msgstr ""
+
+#: gestation.pages.inc:435;467
+msgid "Semanas de gestação baseada na DUM"
+msgstr ""
+
+#: gestation.pages.inc:436;468
+msgid "Semanas desde concepção"
+msgstr ""
+
+#: gestation.pages.inc:441;473
+msgid "Vermelho: Data estimada da concepção"
+msgstr ""
+
+#: gestation.pages.inc:446
+msgid "Verde: Data estimada do nascimento"
+msgstr ""
+
+#: gestation.pages.inc:465
+msgid "The patient is post-dates"
+msgstr ""
+
+#: gestation.pages.inc:478
+msgid "Verde: Primeiro dia da ultima menstruação (DUM)"
+msgstr ""
+
+#: gestation.module:14
+msgid "<a href=\"@gestation\">Module page</a>."
+msgstr ""
+
+#: gestation.module:15
+msgid "Calculadora Gestacional by <a href=\"http://adalid-soft.com\">Adalid-Soft</a>"
+msgstr ""
+
+#: gestation.module:16
+msgid "Contact: erick (at) adalid-soft (dot) com"
+msgstr ""
+
+#: gestation.module:26
+msgid "access gestation"
+msgstr ""
+
+#: gestation.module:26
+msgid "administer gestation"
+msgstr ""
+
+#: gestation.module:36;44;53;61;69;79;88 gestation.info:0
+msgid "Gestação"
+msgstr ""
+
+#: gestation.module:0
+msgid "Gestação"
+msgstr ""
+
+#: gestation.info:0
+msgid "Estimar a duração da gravidez"
+msgstr ""
+
+#: gestation.info:0
+msgid "Adalid-Soft"
+msgstr ""
+

@@ -1,0 +1,6 @@
+name = Gestation
+description = To estimate duration of pregnancy
+version = VERSION
+core = 6.x
+package = Adalid-Soft
+dependencies[] = fertility

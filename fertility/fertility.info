@@ -1,0 +1,5 @@
+name = Fertility
+description = Fertility Calculator.
+version = VERSION
+core = 6.x
+package = Adalid-Soft

@@ -1,0 +1,79 @@
+<?php
+
+/**
+ *  2008 Erick Romero (erm) <erick@adalid-soft.com>
+ *  Fertility
+*/
+
+/**
+ * Implementation of hook_help().
+ */
+function fertility_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#fertility':
+      $output  = '<p>'. t('<a href="@fertility">Module page</a>.', array('@fertility' => url('fertility'))) .'</p>';
+      $output .= '<p>'. t('Fertility Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') .'<br>';
+      $output .= t('Contact: erick (at) adalid-soft (dot) com') .'</p>';
+      return $output;
+  }
+  return '';
+}
+
+/**
+ * Implementation of hook_perm
+ */
+function fertility_perm() {
+  return array('access fertility', 'administer fertility');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function fertility_menu() {
+
+//erm. admin menu
+  $items['admin/fertility'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.admin.inc',
+    'page callback' => 'fertility_admin_page',
+    'access arguments' => array('administer fertility'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/fertility/export'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.admin.inc',
+    'page callback' => 'fertility_export',
+    'access arguments' => array('administer fertility'),
+    'type' => MENU_CALLBACK,
+  );
+
+//erm. user menu
+  $items['fertility'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.pages.inc',
+    'page callback' => 'fertility_main',
+    'access arguments' => array('access fertility'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['fertility/result/%'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.pages.inc',
+    'page callback' => 'fertility_result',
+    'page arguments' => array(2),
+    'access arguments' => array('access fertility'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['fertility/print/%'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.pages.inc',
+    'page callback' => 'fertility_print',
+    'page arguments' => array(2),
+    'access arguments' => array('access fertility'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
