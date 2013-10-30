@@ -3,35 +3,44 @@
 /**
  *  2009 Erick Romero (erm) <erick@adalid-soft.com>
  *  Gestation
-*/
+ */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_help().
  */
 function gestation_help($path, $arg) {
   switch ($path) {
     case 'admin/help#gestation':
-      $output  = '<p>'. t('<a href="@gestation">Module page</a>.', array('@gestation' => url('gestation'))) .'</p>';
-      $output .= '<p>'. t('Gestation Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') .'<br>';
-      $output .= t('Contact: erick (at) adalid-soft (dot) com') .'</p>';
+      $output = '<p>' . t('<a href="@gestation">Module page</a>.', array('@gestation' => url('gestation'))) . '</p>';
+      $output .= '<p>' . t('Gestation Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') . '<br>';
+      $output .= t('Contact: erick (at) adalid-soft (dot) com') . '</p>';
       return $output;
   }
   return '';
 }
 
 /**
- * Implementation of hook_perm
+ * Implements hook_permission().
  */
-function gestation_perm() {
-  return array('access gestation', 'administer gestation');
+function gestation_permission() {
+  return array(
+    'access gestation' => array(
+      'title' => t('access gestation'),
+      'description' => t('TODO Add a description for \'access gestation\''),
+    ),
+    'administer gestation' => array(
+      'title' => t('administer gestation'),
+      'description' => t('TODO Add a description for \'administer gestation\''),
+    ),
+  );
 }
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function gestation_menu() {
 
-//erm. admin menu
+  //erm. admin menu
   $items['admin/gestation'] = array(
     'title' => 'Gestation',
     'file' => 'gestation.admin.inc',
@@ -48,7 +57,7 @@ function gestation_menu() {
     'type' => MENU_CALLBACK,
   );
 
-//erm. user menu
+  //erm. user menu
   $items['gestation'] = array(
     'title' => 'Gestation',
     'file' => 'gestation.pages.inc',

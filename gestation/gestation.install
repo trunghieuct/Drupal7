@@ -1,13 +1,19 @@
 <?php
+/**
+ * @file
+ * Install, update and uninstall functions for the gestation module.
+ *
+ */
+
 
 /**
  *  2009 Erick Romero (erm) <erick@adalid-soft.com>
  *  gestation Calculator
-*/
+ */
 
 
 /**
- * Implementation of hook_install().
+ * Implements hook_install().
  */
 function gestation_install() {
   // Create tables.
@@ -16,7 +22,7 @@ function gestation_install() {
 }
 
 /**
- * Implementation of hook_uninstall().
+ * Implements hook_uninstall().
  */
 function gestation_uninstall() {
   // Remove tables.

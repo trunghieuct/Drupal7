@@ -3,35 +3,44 @@
 /**
  *  2008 Erick Romero (erm) <erick@adalid-soft.com>
  *  Fertility
-*/
+ */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_help().
  */
 function fertility_help($path, $arg) {
   switch ($path) {
     case 'admin/help#fertility':
-      $output  = '<p>'. t('<a href="@fertility">Module page</a>.', array('@fertility' => url('fertility'))) .'</p>';
-      $output .= '<p>'. t('Fertility Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') .'<br>';
-      $output .= t('Contact: erick (at) adalid-soft (dot) com') .'</p>';
+      $output = '<p>' . t('<a href="@fertility">Module page</a>.', array('@fertility' => url('fertility'))) . '</p>';
+      $output .= '<p>' . t('Fertility Calculator by <a href="http://adalid-soft.com">Adalid-Soft</a>') . '<br>';
+      $output .= t('Contact: erick (at) adalid-soft (dot) com') . '</p>';
       return $output;
   }
   return '';
 }
 
 /**
- * Implementation of hook_perm
+ * Implements hook_permission().
  */
-function fertility_perm() {
-  return array('access fertility', 'administer fertility');
+function fertility_permission() {
+  return array(
+    'access fertility' => array(
+      'title' => t('access fertility'),
+      'description' => t('TODO Add a description for \'access fertility\''),
+    ),
+    'administer fertility' => array(
+      'title' => t('administer fertility'),
+      'description' => t('TODO Add a description for \'administer fertility\''),
+    ),
+  );
 }
 
 /**
- * Implementation of hook_menu().
+ * Implements hook_menu().
  */
 function fertility_menu() {
 
-//erm. admin menu
+  //erm. admin menu
   $items['admin/fertility'] = array(
     'title' => 'Fertility',
     'file' => 'fertility.admin.inc',
@@ -48,11 +57,19 @@ function fertility_menu() {
     'type' => MENU_CALLBACK,
   );
 
-//erm. user menu
-  $items['fertility'] = array(
+  //erm. user menu
+ /* $items['fertility'] = array(
     'title' => 'Fertility',
     'file' => 'fertility.pages.inc',
     'page callback' => 'fertility_main',
+    'access arguments' => array('access fertility'),
+    'type' => MENU_NORMAL_ITEM,
+  );*/
+  $items['fertility'] = array(
+    'title' => 'Fertility',
+    'file' => 'fertility.pages.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments'  => array('fertility_form'),    
     'access arguments' => array('access fertility'),
     'type' => MENU_NORMAL_ITEM,
   );
